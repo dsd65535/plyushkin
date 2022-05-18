@@ -1,0 +1,15 @@
+[Unit]
+Description=Daily ZFS Backup
+Wants=plyushkin.timer
+
+[Service]
+Type=oneshot
+User=plyushkin
+Group=plyushkin
+Environment="FS_NAME=test"
+Environment="TARGET=stork"
+ExecStart="/opt/plyushkin/create_snapshot.sh"
+ExecStart="/opt/plyushkin/send_snapshot.sh"
+
+[Install]
+WantedBy=multi-user.target
