@@ -1,9 +1,9 @@
 [Unit]
 Description=Daily ZFS Backup
-Requires=plyushkin.service
+Requires=plyushkin@.service
 
 [Timer]
-Unit=plyushkin.service
+Unit=plyushkin@.service
 OnCalendar=*-*-* 04:00:00
 
 [Install]
